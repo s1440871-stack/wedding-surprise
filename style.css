@@ -4,196 +4,295 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Georgia, "Times New Roman", serif;
     background: #fff7f8;
-    color: #4a2630;
+    color: #4a3035;
     text-align: center;
+    overflow-x: hidden;
 }
 
 /* Opening Screen */
 
-.hero {
+.opening {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 30px 20px;
-    background:
-        linear-gradient(
-            rgba(255, 230, 236, 0.85),
-            rgba(255, 247, 248, 0.95)
-        );
+    background: linear-gradient(145deg, #fff1f4, #ffe1e8);
+    position: relative;
+    overflow: hidden;
 }
 
-.hero h1 {
+.small-title,
+.section-label {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #a56a76;
+}
+
+.opening h1 {
     font-size: 42px;
-    margin: 25px 0 15px;
+    line-height: 1.2;
+    margin: 18px 0;
+    font-weight: normal;
 }
 
-.hero p {
+.opening h1 span {
+    font-size: 32px;
+}
+
+.subtitle {
     font-size: 18px;
-    max-width: 400px;
-    line-height: 1.6;
-}
-
-.hearts {
-    font-size: 28px;
-    letter-spacing: 8px;
-    animation: float 2s infinite ease-in-out;
+    line-height: 1.7;
+    color: #76535a;
 }
 
 button {
     margin-top: 30px;
-    padding: 15px 28px;
+    padding: 15px 25px;
     border: none;
     border-radius: 30px;
-    background: #c94f70;
+    background: #9d5363;
     color: white;
-    font-size: 17px;
+    font-size: 15px;
     cursor: pointer;
-    box-shadow: 0 8px 20px rgba(201, 79, 112, 0.25);
+    box-shadow: 0 8px 20px rgba(120, 50, 70, 0.2);
 }
 
 button:active {
     transform: scale(0.96);
 }
 
+/* Floating Heart */
 
-/* Hide Surprise */
-
-.hidden {
-    display: none;
+.floating-hearts {
+    position: absolute;
+    top: 12%;
+    font-size: 35px;
+    animation: floatHeart 3s ease-in-out infinite;
 }
 
-
-/* Names */
-
-.names {
-    padding: 80px 20px 50px;
-}
-
-.names h2 {
-    font-size: 42px;
-    margin: 15px 0;
-    color: #b33d5c;
-}
-
-
-/* Gallery */
-
-.gallery {
-    padding: 50px 15px;
-}
-
-.gallery h2,
-.message h2,
-.date h2 {
-    font-size: 30px;
-    margin-bottom: 30px;
-}
-
-.photos {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    max-width: 600px;
-    margin: auto;
-}
-
-.photos img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 18px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
-}
-
-
-/* Message */
-
-.message {
-    margin: 30px 15px;
-    padding: 45px 25px;
-    background: white;
-    border-radius: 25px;
-    box-shadow: 0 10px 30px rgba(120, 50, 70, 0.1);
-}
-
-.message p {
-    max-width: 650px;
-    margin: auto;
-    font-size: 18px;
-    line-height: 1.9;
-}
-
-
-/* Date */
-
-.date {
-    padding: 70px 20px;
-    background: #fde5eb;
-}
-
-.date p {
-    font-size: 25px;
-    color: #b33d5c;
-    font-weight: bold;
-}
-
-
-/* Final */
-
-.final {
-    padding: 90px 20px;
-}
-
-.final h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.final p {
-    font-size: 18px;
-    margin-bottom: 25px;
-}
-
-
-/* Animation */
-
-@keyframes float {
+@keyframes floatHeart {
     0%, 100% {
         transform: translateY(0);
     }
 
     50% {
-        transform: translateY(-10px);
+        transform: translateY(-15px);
     }
 }
 
+/* Hidden */
+
+.hidden {
+    display: none;
+}
+
+/* Couple Section */
+
+.couple {
+    padding: 80px 20px 60px;
+    background: #fff;
+}
+
+.couple h2 {
+    font-size: 36px;
+    font-weight: normal;
+    margin: 18px 0;
+}
+
+.couple h2 span {
+    font-size: 25px;
+}
+
+.couple p:last-child {
+    color: #9d5363;
+    font-size: 17px;
+}
+
+/* Gallery */
+
+.gallery {
+    padding: 70px 0;
+    background: #fff7f8;
+}
+
+.gallery h2 {
+    font-size: 27px;
+    font-weight: normal;
+    margin: 15px 20px 30px;
+}
+
+.photo-scroll {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    padding: 10px 20px 20px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.photo-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.photo-card {
+    flex: 0 0 82%;
+    height: 430px;
+    border-radius: 22px;
+    overflow: hidden;
+    scroll-snap-align: center;
+    background: #eee;
+    box-shadow: 0 12px 30px rgba(80, 40, 50, 0.15);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.swipe {
+    margin-top: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    color: #a56a76;
+}
+
+/* Message */
+
+.message {
+    padding: 70px 20px;
+    background: #f8e8ec;
+}
+
+.message-card {
+    background: white;
+    border-radius: 28px;
+    padding: 45px 25px;
+    max-width: 500px;
+    margin: auto;
+    box-shadow: 0 15px 40px rgba(80, 40, 50, 0.1);
+}
+
+.heart-icon {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.message h2 {
+    font-size: 27px;
+    line-height: 1.4;
+    font-weight: normal;
+    margin: 20px 0;
+}
+
+.message-text {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #70545a;
+    white-space: pre-line;
+}
+
+.signature {
+    margin-top: 30px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #9d5363;
+}
+
+/* Date */
+
+.date-section {
+    padding: 80px 20px;
+    background: #fff;
+}
+
+.date-section h2 {
+    font-size: 52px;
+    font-weight: normal;
+    letter-spacing: 6px;
+    margin: 20px 0;
+}
+
+.date-section p:last-child {
+    font-size: 16px;
+    color: #76535a;
+}
+
+/* Final */
+
+.final {
+    min-height: 80vh;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(145deg, #ffe5eb, #fff5f7);
+}
+
+.big-heart {
+    font-size: 70px;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+.final h2 {
+    font-size: 32px;
+    font-weight: normal;
+    margin: 25px 0 10px;
+}
+
+.final p {
+    font-size: 18px;
+    color: #76535a;
+}
 
 /* Mobile */
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
 
-    .hero h1 {
+    .opening h1 {
         font-size: 34px;
     }
 
-    .names h2 {
-        font-size: 32px;
+    .couple h2 {
+        font-size: 30px;
     }
 
-    .photos img {
-        height: 180px;
+    .photo-card {
+        height: 390px;
     }
 
-    .message {
-        padding: 35px 20px;
+    .message h2 {
+        font-size: 23px;
     }
 
-    .message p {
-        font-size: 16px;
+    .date-section h2 {
+        font-size: 45px;
+    }
+
+    .final h2 {
+        font-size: 28px;
     }
 }
