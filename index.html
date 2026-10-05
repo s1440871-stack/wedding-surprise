@@ -1,103 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>A Special Surprise ❤️</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Sindhu ❤️ Christo</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Opening Section -->
-    <section class="hero">
-        <div class="hearts">❤️ ❤️ ❤️</div>
+    <!-- Opening Screen -->
+    <section class="opening" id="opening">
 
-        <h1>A Little Surprise...</h1>
+        <div class="floating-hearts">
+            ❤️
+        </div>
 
-        <p>For two beautiful people beginning a beautiful journey.</p>
+        <p class="small-title">
+            A little surprise for
+        </p>
 
-        <button onclick="showSurprise()">
+        <h1>
+            Sindhu <span>❤️</span> Christo
+        </h1>
+
+        <p class="subtitle">
+            One month of love,<br>
+            a lifetime to go...
+        </p>
+
+        <button onclick="openSurprise()">
             Open Your Surprise 💌
         </button>
+
     </section>
 
 
-    <!-- Main Content -->
-    <main id="surprise" class="hidden">
+    <!-- Main Website -->
+    <main id="mainContent" class="hidden">
 
-        <section class="names">
-            <p>Celebrating the love of</p>
+        <!-- Couple -->
+        <section class="couple">
 
-            <h2>christo ❤️ sindhu</h2>
+            <p class="section-label">
+                CELEBRATING LOVE
+            </p>
 
-            <p>On their special day</p>
+            <h2>
+                Sindhu
+                <span>❤️</span>
+                Christo
+            </h2>
+
+            <p>
+                7 September
+            </p>
+
         </section>
 
 
-        <!-- Photo Section -->
+        <!-- Photo Gallery -->
         <section class="gallery">
 
-            <h2>Beautiful Memories 📸</h2>
+            <p class="section-label">
+                OUR MEMORIES
+            </p>
 
-            <div class="photos">
+            <h2>
+                Moments That Matter 📸
+            </h2>
 
-                <img src="images/photo1.jpg" alt="Memory 1">
+            <div class="photo-scroll">
 
-                <img src="images/photo2.jpg" alt="Memory 2">
+                <div class="photo-card">
+                    <img src="images/photo1.jpg"
+                         alt="Sindhu and Christo">
+                </div>
 
-                <img src="images/photo3.jpg" alt="Memory 3">
+                <div class="photo-card">
+                    <img src="images/photo2.jpg"
+                         alt="Sindhu and Christo">
+                </div>
 
-                <img src="images/photo4.jpg" alt="Memory 4">
+                <div class="photo-card">
+                    <img src="images/photo3.jpg"
+                         alt="Sindhu and Christo">
+                </div>
+
+                <div class="photo-card">
+                    <img src="images/photo4.jpg"
+                         alt="Sindhu and Christo">
+                </div>
 
             </div>
+
+            <p class="swipe">
+                ← Swipe to see more →
+            </p>
 
         </section>
 
 
-        <!-- Message -->
+        <!-- Anniversary Message -->
         <section class="message">
 
-            <h2>To the Beautiful Couple ❤️</h2>
+            <div class="message-card">
+
+                <div class="heart-icon">
+                    ❤️
+                </div>
+
+                <p class="section-label">
+                    A SPECIAL MESSAGE
+                </p>
+
+                <h2>
+                    HAPPY FIRST<br>
+                    MONTH ANNIVERSARY
+                </h2>
+
+                <p class="message-text">
+                    One beautiful month down,
+                    and so many beautiful memories
+                    waiting to be created.
+
+                    Here's to love, laughter,
+                    happiness and a lifetime
+                    of togetherness.
+
+                    ❤️
+                </p>
+
+                <p class="signature">
+                    With lots of love,<br>
+                    for Sindhu & Christo
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Date -->
+        <section class="date-section">
+
+            <p class="section-label">
+                THE BEGINNING OF FOREVER
+            </p>
+
+            <h2>
+                07 • 09
+            </h2>
 
             <p>
-                Wishing you both a lifetime filled with love,
-                laughter, happiness and countless beautiful memories.
-
-                May your journey together be filled with
-                unforgettable moments and endless smiles.
-
-                Here's to a beautiful new beginning! 💍❤️
-                Happy first month anniversary love 💍❤️
+                A special date,
+                a beautiful story.
             </p>
 
         </section>
 
 
-        <!-- Wedding Date -->
-        <section class="date">
-
-            <h2>Save The Date 💍</h2>
-
-            <p>7 september 2026</p>
-
-        </section>
-
-
-        <!-- Final Message -->
+        <!-- Final -->
         <section class="final">
 
-            <h2>And so the beautiful journey begins... ❤️</h2>
+            <div class="big-heart">
+                ❤️
+            </div>
+
+            <h2>
+                One month...
+            </h2>
 
             <p>
-                Congratulations to the wonderful couple!
+                Forever to go. 💍
             </p>
 
-            <div class="hearts">
-                ❤️ 💕 ❤️ 💕 ❤️
-            </div>
+            <button onclick="celebrate()">
+                Celebrate ❤️
+            </button>
 
         </section>
 
@@ -107,4 +192,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>
