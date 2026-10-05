@@ -1,22 +1,40 @@
-function showSurprise() {
+function openSurprise() {
+    const opening = document.getElementById("opening");
+    const mainContent = document.getElementById("mainContent");
 
-    const surprise = document.getElementById("surprise");
+    opening.style.opacity = "0";
+    opening.style.transition = "opacity 0.8s ease";
 
-    surprise.classList.remove("hidden");
+    setTimeout(() => {
+        opening.style.display = "none";
+        mainContent.classList.remove("hidden");
 
-    // Scroll smoothly to the surprise
-    surprise.scrollIntoView({
-        behavior: "smooth"
-    });
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
 
-    // Create floating hearts
+        createHearts();
+    }, 800);
+}
+
+
+function celebrate() {
     createHearts();
+
+    const button = document.querySelector(".final button");
+
+    button.innerHTML = "❤️ Love Forever ❤️";
+
+    setTimeout(() => {
+        button.innerHTML = "Celebrate ❤️";
+    }, 3000);
 }
 
 
 function createHearts() {
 
-    for (let i = 0; i < 25; i++) {
+    for (let i = 0; i < 20; i++) {
 
         const heart = document.createElement("div");
 
@@ -24,34 +42,35 @@ function createHearts() {
 
         heart.style.position = "fixed";
         heart.style.left = Math.random() * 100 + "vw";
-        heart.style.top = "100vh";
-        heart.style.fontSize = (15 + Math.random() * 25) + "px";
+        heart.style.bottom = "-30px";
+        heart.style.fontSize = (15 + Math.random() * 20) + "px";
         heart.style.zIndex = "9999";
         heart.style.pointerEvents = "none";
 
         document.body.appendChild(heart);
 
-        const duration = 3 + Math.random() * 3;
+        const duration = 2000 + Math.random() * 2500;
 
         heart.animate(
             [
                 {
-                    transform: "translateY(0)",
+                    transform: "translateY(0) scale(1)",
                     opacity: 1
                 },
                 {
-                    transform: `translateY(-${window.innerHeight + 200}px)`,
+                    transform:
+                        `translateY(-${window.innerHeight + 100}px) rotate(${Math.random() * 360}deg) scale(0.5)`,
                     opacity: 0
                 }
             ],
             {
-                duration: duration * 1000,
+                duration: duration,
                 easing: "ease-out"
             }
         );
 
         setTimeout(() => {
             heart.remove();
-        }, duration * 1000);
+        }, duration);
     }
 }
