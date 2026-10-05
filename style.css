@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #fff7f8;
+    color: #4a2630;
+    text-align: center;
+}
+
+/* Opening Screen */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    background:
+        linear-gradient(
+            rgba(255, 230, 236, 0.85),
+            rgba(255, 247, 248, 0.95)
+        );
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin: 25px 0 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 400px;
+    line-height: 1.6;
+}
+
+.hearts {
+    font-size: 28px;
+    letter-spacing: 8px;
+    animation: float 2s infinite ease-in-out;
+}
+
+button {
+    margin-top: 30px;
+    padding: 15px 28px;
+    border: none;
+    border-radius: 30px;
+    background: #c94f70;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(201, 79, 112, 0.25);
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+
+/* Hide Surprise */
+
+.hidden {
+    display: none;
+}
+
+
+/* Names */
+
+.names {
+    padding: 80px 20px 50px;
+}
+
+.names h2 {
+    font-size: 42px;
+    margin: 15px 0;
+    color: #b33d5c;
+}
+
+
+/* Gallery */
+
+.gallery {
+    padding: 50px 15px;
+}
+
+.gallery h2,
+.message h2,
+.date h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.photos img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Message */
+
+.message {
+    margin: 30px 15px;
+    padding: 45px 25px;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(120, 50, 70, 0.1);
+}
+
+.message p {
+    max-width: 650px;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+
+/* Date */
+
+.date {
+    padding: 70px 20px;
+    background: #fde5eb;
+}
+
+.date p {
+    font-size: 25px;
+    color: #b33d5c;
+    font-weight: bold;
+}
+
+
+/* Final */
+
+.final {
+    padding: 90px 20px;
+}
+
+.final h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.final p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+
+/* Animation */
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .names h2 {
+        font-size: 32px;
+    }
+
+    .photos img {
+        height: 180px;
+    }
+
+    .message {
+        padding: 35px 20px;
+    }
+
+    .message p {
+        font-size: 16px;
+    }
+}
